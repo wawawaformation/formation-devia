@@ -1,0 +1,15 @@
+services:
+  freshrss:
+    image: freshrss/freshrss:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - freshrss-data:/var/www/FreshRSS/data
+      - freshrss-extensions:/var/www/FreshRSS/extensions
+    environment:
+      TZ: Europe/Paris
+    restart: unless-stopped
+
+volumes:
+  freshrss-data:
+  freshrss-extensions:
